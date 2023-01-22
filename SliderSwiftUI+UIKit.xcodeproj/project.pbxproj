@@ -11,6 +11,7 @@
 		C7F4C12F297ADBCD00E27CAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4C12E297ADBCD00E27CAB /* ContentView.swift */; };
 		C7F4C131297ADBCE00E27CAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F4C130297ADBCE00E27CAB /* Assets.xcassets */; };
 		C7F4C134297ADBCE00E27CAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F4C133297ADBCE00E27CAB /* Preview Assets.xcassets */; };
+		C7F4C13B297AE87100E27CAB /* DecimalSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4C13A297AE87100E27CAB /* DecimalSliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C7F4C12E297ADBCD00E27CAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7F4C130297ADBCE00E27CAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7F4C133297ADBCE00E27CAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7F4C13A297AE87100E27CAB /* DecimalSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalSliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				C7F4C12C297ADBCD00E27CAB /* SliderSwiftUI_UIKitApp.swift */,
 				C7F4C12E297ADBCD00E27CAB /* ContentView.swift */,
+				C7F4C13A297AE87100E27CAB /* DecimalSliderView.swift */,
 				C7F4C130297ADBCE00E27CAB /* Assets.xcassets */,
 				C7F4C132297ADBCE00E27CAB /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F4C12F297ADBCD00E27CAB /* ContentView.swift in Sources */,
+				C7F4C13B297AE87100E27CAB /* DecimalSliderView.swift in Sources */,
 				C7F4C12D297ADBCD00E27CAB /* SliderSwiftUI_UIKitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

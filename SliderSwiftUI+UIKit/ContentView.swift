@@ -8,19 +8,65 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var targetValue = Int.random(in: 0...100) //целевое значение
+    @State private var currentValue = Double.random(in: 0...100) //текущее значение слайдера
+    @State private var alpha = 0.1
+
+    @State private var showAlert = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Подвиньте слайдер как можно ближе к: \(targetValue)")
+                .padding()
+            HStack {
+                Text("0")
+                
+                DecimalSliderView(value: $currentValue, alpha: alpha)
+                    .onChange(of: currentValue) { _ in
+                        setThumbOpacity()
+                    }
+                
+                Text("100")
+            }
+            .frame(width: 350)
+            
+            
+            Button("Проверь меня!") {
+                showAlert.toggle()
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Ваш результат"),
+                      message: Text("\(lround(currentValue))")
+                )
+            }
+            .padding()
+            Button(action: {
+                startAgain()
+                
+            }) {
+                Text("Начать заново")
+            }
         }
-        .padding()
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    private func computeScore() -> Int {
+        let difference = abs(targetValue - lround(currentValue))
+        return 100 - difference
+    }
+    
+    private func startAgain() {
+        targetValue = Int.random(in: 0...100)
+        currentValue = Double.random(in: 0...100)
+    }
+    
+    private func setThumbOpacity() {
+        alpha = Double(computeScore()) / 100
+    }
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
