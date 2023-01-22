@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @State private var targetValue = Int.random(in: 0...100) //целевое значение
     @State private var currentValue = Double.random(in: 0...100) //текущее значение слайдера
-    @State private var alpha = 0.1
+    @State private var alpha = 0.5
 
     @State private var showAlert = false
     
@@ -22,8 +22,8 @@ struct ContentView: View {
             HStack {
                 Text("0")
                 
-                DecimalSliderView(value: $currentValue, alpha: alpha)
-                    .onChange(of: currentValue) { _ in
+                SliderView(value: $currentValue, alpha: alpha)
+                    .onChange(of: currentValue) { newValue in
                         setThumbOpacity()
                     }
                 
@@ -37,7 +37,7 @@ struct ContentView: View {
             }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Ваш результат"),
-                      message: Text("\(lround(currentValue))")
+                      message: Text("\(computeScore())")
                 )
             }
             .padding()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DecimalSliderView: UIViewRepresentable {
+struct SliderView: UIViewRepresentable {
     
     @Binding var value: Double
     var alpha: Double
@@ -26,14 +26,14 @@ struct DecimalSliderView: UIViewRepresentable {
                          action: #selector(Coordinator.changedValue),
                          for: .valueChanged)
         
-        slider.thumbTintColor = UIColor.red.withAlphaComponent(CGFloat(alpha))
+       
        
         return slider
     }
     
     func updateUIView(_ uiView: UISlider, context: Context) {
         uiView.value = Float(value)
-        
+        uiView.thumbTintColor = UIColor.red.withAlphaComponent(CGFloat(alpha))
 
     }
     
@@ -42,7 +42,7 @@ struct DecimalSliderView: UIViewRepresentable {
     }
 }
 
-extension DecimalSliderView {
+extension SliderView {
     class Coordinator: NSObject {
         
         @Binding var value: Double
@@ -58,7 +58,7 @@ extension DecimalSliderView {
 
 struct DecimalSliderView_Previews: PreviewProvider {
     static var previews: some View {
-        DecimalSliderView(value: .constant(30), alpha: 1)
+        SliderView(value: .constant(30), alpha: 1)
     }
 }
 
